@@ -59,6 +59,24 @@ class LoginTextFieldsComponent extends StatelessWidget {
           elevation: 0.0,
           gradient: kLinearGradient,
         ),
+        GestureDetector(
+          onTap: () {
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              GeneralText(
+                text: "Don't have an account? ",
+                size: 17,
+              ),
+              GeneralText(
+                text: "Sign Up",
+                size: 17,
+                color: kPrimaryColor,
+              ),
+            ],
+          ),
+        )
       ],
     );
   }
