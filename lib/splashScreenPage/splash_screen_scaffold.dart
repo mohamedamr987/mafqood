@@ -1,6 +1,8 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mafqood/core/helpers/navigation_helper.dart';
+import 'package:mafqood/onBoardingPage/on_boarding_page_view.dart';
 
 import '../constants.dart';
 import '../size_config.dart';
@@ -23,8 +25,10 @@ class _SplashScreenScaffoldState extends State<SplashScreenScaffold> {
 
   void delayingFunc() async {
     try {
-
-      // NavigationHelper.pushUntil(navigatorKey.currentContext!, CoreInfo.isLogged() ? const MainPageView() : const WelcomePageView(),);
+      Future.delayed(const Duration(seconds: 3)).then(
+        (value) =>
+            NavigationHelper.pushUntil(context, const OnBoardingPageView()),
+      );
     } catch (e, trace) {
       log(e.toString());
       log(trace.toString());

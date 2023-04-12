@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mafqood/size_config.dart';
 
-import '../constants.dart';
-
 class MainLayoutWidget extends StatelessWidget {
   final Widget widget;
   final Color backGroundColor;
@@ -26,7 +24,7 @@ class MainLayoutWidget extends StatelessWidget {
   const MainLayoutWidget({
     Key? key,
     required this.widget,
-    this.backGroundColor = kSecondaryColor,
+    this.backGroundColor = Colors.white,
     this.scrollController,
     this.minHeight,
     this.maxHeight,

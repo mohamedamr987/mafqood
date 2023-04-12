@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mafqood/constants.dart';
 import '../size_config.dart';
 
 class GeneralText extends StatelessWidget {
@@ -17,7 +18,7 @@ class GeneralText extends StatelessWidget {
       required this.text,
       this.size = 14,
       this.margin = 0,
-      this.color = const Color(0xFF121826),
+      this.color = kFontColor,
       this.isBold = false,
       this.textDecoration = TextDecoration.none,
       this.textAlign = TextAlign.start,
