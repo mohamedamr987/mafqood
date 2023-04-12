@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mafqood/core/helpers/navigation_helper.dart';
+import 'package:mafqood/loginInPage/login_in_page_view.dart';
 import 'package:mafqood/onBoardingPage/controller.dart';
 import 'package:mafqood/widgets/general_button.dart';
 
@@ -26,7 +28,7 @@ class ButtonsComponent extends StatelessWidget {
             if(blocController.dotIndicatorPosition == 0.0)
               GeneralButton(
                 text: "Skip",
-                onPressed: () {},
+                onPressed: ()=> NavigationHelper.pushUntil(context, const LoginInPageView()),
                 width: 100,
                 gradient: linearGradient,
               )
