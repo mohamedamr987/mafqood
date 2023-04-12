@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mafqood/constants.dart';
 import 'package:mafqood/widgets/general_text.dart';
 
 import '../../widgets/general_app_bar_widget.dart';
@@ -13,7 +14,6 @@ class LoginInPageScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     LoginInPageController blocController = LoginInPageController.of(context);
     return MainLayoutWidget(
-      appBar: generalAppBar(title: '', color: Colors.black,),
       extendBodyBehindAppBar: true,
       backGroundColor: Colors.white,
       widthMargin: 30,
@@ -23,12 +23,13 @@ class LoginInPageScaffold extends StatelessWidget {
           children: [
             const SizedBox(height: 25,),
             Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
                 SizedBox(width: double.infinity,),
-                GeneralText(text: "Welcome back", size: 34, isBold: true,),
-                GeneralText(text: "Login to your account", size: 17,),
-                SizedBox(height: 58,),
+                GeneralText(text: "Welcome back", size: 34, isBold: true, color: kPrimaryColor,),
+                SizedBox(height: 10,),
+                GeneralText(text: "Sign In Now", size: 17,),
+                SizedBox(height: 70,),
               ],
             ),
             const LoginTextFieldsComponent(),

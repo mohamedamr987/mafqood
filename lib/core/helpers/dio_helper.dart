@@ -11,7 +11,7 @@ import '../repo/bearer_token_repo.dart';
 
 class DioHelper
 {
-  static String baseUrl = "https://influenceracademy.digital/api";
+  static String baseUrl = "https://domain.com/api";
   static String api = baseUrl;
   BearerTokenRepo bearerTokenRepo = BearerTokenRepo();
 

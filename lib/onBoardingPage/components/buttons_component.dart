@@ -5,20 +5,15 @@ import 'package:mafqood/loginInPage/login_in_page_view.dart';
 import 'package:mafqood/onBoardingPage/controller.dart';
 import 'package:mafqood/widgets/general_button.dart';
 
+import '../../constants.dart';
+
 class ButtonsComponent extends StatelessWidget {
   const ButtonsComponent({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     OnBoardingPageController blocController = BlocProvider.of(context);
-    const LinearGradient linearGradient = LinearGradient(
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-      colors: [
-        Color(0xff4BDFFF),
-        Color(0xff4F53C2),
-      ],
-    );
+
     return BlocBuilder(
       bloc: blocController,
       builder: (context, state) {
@@ -30,7 +25,7 @@ class ButtonsComponent extends StatelessWidget {
                 text: "Skip",
                 onPressed: ()=> NavigationHelper.pushUntil(context, const LoginInPageView()),
                 width: 100,
-                gradient: linearGradient,
+                gradient: kLinearGradient,
               )
             else
               const SizedBox(),
@@ -38,7 +33,7 @@ class ButtonsComponent extends StatelessWidget {
               text: "Next",
               onPressed: blocController.onPressedNextButton,
               width: 100,
-              gradient: linearGradient,
+              gradient: kLinearGradient,
             ),
           ],
         );

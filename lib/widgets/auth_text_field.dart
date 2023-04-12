@@ -20,7 +20,8 @@ class AuthTextField extends StatefulWidget {
   final bool autoFocus;
   final Color? labelColor;
   final Color fillColor;
-  const AuthTextField({Key? key, this.autoFocus = false,required this.keyboardType, this.sameBorderAfterFocus = false,this.minLines,this.textAlign = TextAlign.start, this.onChanged,this.isPassword =false, this.labelWidget, required this.textController, required this.labelText, this.validation, this.suffixWidget, this.onFieldSubmitted, this.maxLines, this.floatingLabelBehavior = FloatingLabelBehavior.never, this.labelColor, this.fillColor = Colors.white,}) : super(key: key);
+  final IconData? prefixIcon;
+  const AuthTextField({Key? key, this.autoFocus = false,required this.keyboardType, this.sameBorderAfterFocus = false,this.minLines,this.textAlign = TextAlign.start, this.onChanged,this.isPassword =false, this.labelWidget, required this.textController, required this.labelText, this.validation, this.suffixWidget, this.onFieldSubmitted, this.maxLines, this.floatingLabelBehavior = FloatingLabelBehavior.never, this.labelColor, this.fillColor = Colors.white, this.prefixIcon,}) : super(key: key);
 
   @override
   State<AuthTextField> createState() => _AuthTextFieldState();
@@ -59,6 +60,7 @@ class _AuthTextFieldState extends State<AuthTextField> {
         floatingLabelBehavior: widget.floatingLabelBehavior,
         fillColor: widget.fillColor,
         filled: true,
+        prefixIcon: widget.prefixIcon != null ? Icon(widget.prefixIcon, color: kPrimaryColor.withOpacity(0.5),) : null,
         suffixIcon: widget.suffixWidget ??
             (widget.isPassword
                 ? IconButton(
@@ -80,8 +82,8 @@ class _AuthTextFieldState extends State<AuthTextField> {
         labelText: widget.labelWidget == null ? widget.labelText : null,
         labelStyle: TextStyle(color: widget.labelColor,),
         contentPadding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 12),
-        enabledBorder:  getBorderStyle( const Color(0xFFCFD2D7),1),
-        focusedBorder:  getBorderStyle( const Color(0xFFCFD2D7), widget.sameBorderAfterFocus ? 1 : 2),
+        enabledBorder:  getBorderStyle( kPrimaryColor, 1),
+        focusedBorder:  getBorderStyle( kPrimaryColor, widget.sameBorderAfterFocus ? 1 : 2),
         errorBorder: getBorderStyle(const Color(0xFFF22B2B),1),
         focusedErrorBorder:   getBorderStyle(Colors.red.shade900,2),
       ),
