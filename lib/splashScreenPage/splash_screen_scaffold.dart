@@ -1,9 +1,9 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants.dart';
 import '../size_config.dart';
-import '../widgets/general_text.dart';
 import '../widgets/main_layout_widget.dart';
 
 class SplashScreenScaffold extends StatefulWidget {
@@ -35,19 +35,14 @@ class _SplashScreenScaffoldState extends State<SplashScreenScaffold> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return MainLayoutWidget(
-        backGroundColor: kPrimaryColor,
-        isScrollable: false,
-        widget: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            GeneralText(
-              text: "Influencer Academy",
-              size: 39,
-              color: Colors.white,
-              textAlign: TextAlign.center,
-              isBold: true,
-            ),
-          ],
-        ));
+      backGroundColor: kPrimaryColor,
+      isScrollable: false,
+      widget: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgPicture.asset("assets/logo_with_text.svg"),
+        ],
+      ),
+    );
   }
 }
