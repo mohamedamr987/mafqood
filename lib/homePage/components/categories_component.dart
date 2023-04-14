@@ -14,7 +14,7 @@ class CategoriesComponent extends StatelessWidget {
       child: ListView.builder(
         itemCount: 10,
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => const CategoryWidget(title: "Humans", image: "https://i.ibb.co/wQmqGYD/app-icon.png"),
+        itemBuilder: (context, index) => const CategoryWidget(title: "Humans", image: "https://guardian.ng/wp-content/uploads/2022/03/Happy-child-1424x802.jpg"),
       ),
     );
   }
