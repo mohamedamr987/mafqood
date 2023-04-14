@@ -13,25 +13,17 @@ class CacheImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      clipBehavior: Clip.antiAlias,
-      decoration: const BoxDecoration(
-        shape: BoxShape.circle,
-      ),
-      child: ((){
-        if(image == null || image == ""){
-          return Image.asset("assets/person.png",height: height, width: width , fit: fit,);
-        }
-        return CachedNetworkImage(
-          fit: fit ,
-          imageUrl:image!,
-          height: height,
-          width: width ,
-          progressIndicatorBuilder: showLoading? (context, url, downloadProgress) =>
-              Center(child: CircularProgressIndicator(value: downloadProgress.progress,)) : null,
-          errorWidget: (context, url, error) => const Icon(Icons.error,color: kPrimaryColor,),
-        );
-      }()),
+    if(image == null || image == ""){
+      return Image.asset("assets/person.png",height: height, width: width , fit: fit,);
+    }
+    return CachedNetworkImage(
+      fit: fit ,
+      imageUrl:image!,
+      height: height,
+      width: width ,
+      progressIndicatorBuilder: showLoading? (context, url, downloadProgress) =>
+          Center(child: CircularProgressIndicator(value: downloadProgress.progress,)) : null,
+      errorWidget: (context, url, error) => const Icon(Icons.error,color: kPrimaryColor,),
     );
   }
 }
