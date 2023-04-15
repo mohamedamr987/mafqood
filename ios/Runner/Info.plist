@@ -47,5 +47,11 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Mafqud would like to access your photo library</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Mafqud would like to access your camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Mafqud would like to access your microphone</string>
 </dict>
 </plist>

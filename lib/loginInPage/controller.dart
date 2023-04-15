@@ -1,12 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:mafqood/core/helpers/navigation_helper.dart';
-import 'package:mafqood/homePage/home_page_view.dart';
 import 'package:mafqood/widgets/show_loading.dart';
 import 'package:mafqood/widgets/snack_bar_shower.dart';
 import '../constants.dart';
 import '../main.dart';
 
+import '../navigationPage/navigation_page_view.dart';
 import 'repo/login_repo.dart';
 import 'state.dart';
 
@@ -23,7 +23,7 @@ class LoginInPageController extends Cubit<LoginInPageState>
 
   void signInRequest() async {
     if(formKey.currentState!.validate()){
-      NavigationHelper.pushUntil(navigatorKey.currentContext!, const HomePageView(),);
+      NavigationHelper.pushUntil(navigatorKey.currentContext!, const NavigationPageView(),);
       // showLoading();
       // final result = await loginRepo.login(emailController.text, passwordController.text,);
       // hideLoading();

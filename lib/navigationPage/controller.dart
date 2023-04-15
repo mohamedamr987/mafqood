@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mafqood/createReportPage/create_report_page_view.dart';
 
 import '../homePage/home_page_view.dart';
 import 'state.dart';
@@ -11,7 +12,7 @@ class NavigationPageController extends Cubit<NavigationPageState>
   List<Widget> children = const [
     HomePageView(),
     Center(child: Text("Chat")),
-    Center(child: Text("Report")),
+    CreateReportPageView(),
     Center(child: Text("profile")),
   ];
   int index = 0;
