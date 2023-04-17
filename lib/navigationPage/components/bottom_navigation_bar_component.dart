@@ -34,7 +34,7 @@ class BottomNavigationBarComponent extends StatelessWidget {
               icon: Icons.camera_alt,
             ),
             bottomNavigationBarItemWidget(
-              label: "Profile",
+              label: "Settings",
               icon: Icons.person,
             ),
           ],
