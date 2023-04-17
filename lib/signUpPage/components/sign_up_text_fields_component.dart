@@ -16,6 +16,14 @@ class SignUpTextFieldsComponent extends StatelessWidget {
     return Column(
       children: [
         AuthTextField(
+          prefixIcon: Icons.person,
+          keyboardType: TextInputType.text,
+          textController: blocController.fullNameController,
+          labelText: "Full name",
+          floatingLabelBehavior: FloatingLabelBehavior.never,
+        ),
+        const SizedBox(height: 8,),
+        AuthTextField(
           prefixIcon: Icons.email,
           keyboardType: TextInputType.emailAddress,
           textController: blocController.emailController,

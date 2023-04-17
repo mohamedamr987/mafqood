@@ -17,6 +17,7 @@ class SignUpPageController extends Cubit<SignUpPageState>
 
   LoginRepo loginRepo = LoginRepo();
 
+  TextEditingController fullNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
