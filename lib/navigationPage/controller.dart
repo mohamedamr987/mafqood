@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mafqood/createReportPage/create_report_page_view.dart';
+import 'package:mafqood/previousChatPage/previous_chat_page_view.dart';
 import 'package:mafqood/settingsPage/settings_page_view.dart';
 
 import '../homePage/home_page_view.dart';
@@ -12,7 +13,7 @@ class NavigationPageController extends Cubit<NavigationPageState>
   static NavigationPageController of(context)=> BlocProvider.of(context);
   List<Widget> children = const [
     HomePageView(),
-    Center(child: Text("Chat")),
+    PreviousChatPageView(),
     CreateReportPageView(),
     SettingsPageView(),
   ];
