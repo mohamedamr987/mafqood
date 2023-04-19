@@ -25,9 +25,8 @@ class BlocTempWidget extends StatelessWidget {
           );
     } else {
       return Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          successWidget,
           if(errorState)
              Center(
               child: GeneralText(
@@ -35,7 +34,6 @@ class BlocTempWidget extends StatelessWidget {
                 size: 26,
                 isBold: true,
                 textAlign: TextAlign.center,
-                color: Colors.white,
               ),
             )
           else if (emptyState != null && emptyState!)
@@ -45,9 +43,10 @@ class BlocTempWidget extends StatelessWidget {
                 size: 26,
                 isBold: true,
                 textAlign: TextAlign.center,
-                color: Colors.white,
               ),
-            ),
+            )
+          else
+            successWidget,
         ],
       );
     }

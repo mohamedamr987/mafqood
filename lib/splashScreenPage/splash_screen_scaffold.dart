@@ -27,7 +27,7 @@ class _SplashScreenScaffoldState extends State<SplashScreenScaffold> {
 
   void delayingFunc() async {
     try {
-      Future.delayed(const Duration(seconds: 3)).then(
+      CoreInfo.init().then(
         (value) => NavigationHelper.pushUntil(context, CoreInfo.isLogged() ? const NavigationPageView() : const OnBoardingPageView()),
       );
     } catch (e, trace) {

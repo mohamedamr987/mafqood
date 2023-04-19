@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mafqood/core/core_info.dart';
+import 'package:mafqood/homePage/controller.dart';
 import 'package:mafqood/homePage/widgets/category_widget.dart';
 
 class CategoriesComponent extends StatelessWidget {
@@ -6,15 +8,16 @@ class CategoriesComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    HomePageController blocController = HomePageController.of(context);
     return Container(
       margin: const EdgeInsets.only(left: 20,),
       padding: const EdgeInsets.all(2,),
       height: 80,
       width: double.infinity,
       child: ListView.builder(
-        itemCount: 10,
+        itemCount: CoreInfo.categories.length,
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => const CategoryWidget(title: "Humans", image: "https://guardian.ng/wp-content/uploads/2022/03/Happy-child-1424x802.jpg"),
+        itemBuilder: (context, index) => CategoryWidget(categoryModel: CoreInfo.categories[index],),
       ),
     );
   }
