@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mafqood/constants.dart';
+import 'package:mafqood/core/core_info.dart';
+import 'package:mafqood/core/models/category_model.dart';
 
 import '../controller.dart';
 
@@ -26,7 +28,7 @@ class _CategoryDropdownComponentState extends State<CategoryDropdownComponent> {
           Icon(Icons.category, color: kPrimaryColor.withOpacity(0.5),),
           const SizedBox(width: 8,),
           Expanded(
-            child: DropdownButton<String>(
+            child: DropdownButton<CategoryModel>(
               value: blocController.createReportModel.category,
               isExpanded: true,
               hint: const Text('Select Category'),
@@ -35,16 +37,16 @@ class _CategoryDropdownComponentState extends State<CategoryDropdownComponent> {
               elevation: 16,
               style: TextStyle(color: Colors.grey.shade700),
               underline: const SizedBox(),
-              onChanged: (String? newValue) {
+              onChanged: (CategoryModel? newValue) {
                 setState(() {
                   blocController.createReportModel.category = newValue!;
                 });
               },
-              items: <String>["Humans", "Animals", "Bags", "Cars", "Phones"]
-                  .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
+              items: CoreInfo.categories
+                  .map<DropdownMenuItem<CategoryModel>>((CategoryModel value) {
+                return DropdownMenuItem<CategoryModel>(
                   value: value,
-                  child: Text(value),
+                  child: Text(value.name),
                 );
               }).toList(),
             ),

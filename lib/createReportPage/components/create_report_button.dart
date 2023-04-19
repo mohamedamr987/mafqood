@@ -10,7 +10,7 @@ class CreateReportButton extends StatelessWidget {
     CreateReportPageController blocController = CreateReportPageController.of(context);
     return GeneralButton(
       text: "Create",
-      onPressed: blocController.createReportModel.validate,
+      onPressed: blocController.createReport,
     );
   }
 }
