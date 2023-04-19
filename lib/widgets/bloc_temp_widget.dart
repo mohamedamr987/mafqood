@@ -25,7 +25,7 @@ class BlocTempWidget extends StatelessWidget {
           );
     } else {
       return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
           if(errorState)
              Center(

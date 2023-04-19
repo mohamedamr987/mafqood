@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mafqood/viewReportPage/controller.dart';
 import 'package:mafqood/widgets/cache_image_widget.dart';
 
 class ReportImageComponent extends StatelessWidget {
@@ -6,6 +7,7 @@ class ReportImageComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ViewReportPageController blocController = ViewReportPageController.of(context);
     return Container(
       clipBehavior: Clip.antiAlias,
       height: 240,
@@ -14,8 +16,8 @@ class ReportImageComponent extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(30),
       ),
-      child: const CacheImageWidget(
-        image: "https://childmind.org/wp-content/uploads/2021/07/our-impact-header-half-r.jpg",
+      child: CacheImageWidget(
+        image: blocController.reportModel.image,
         fit: BoxFit.fill,
       ),
     );
