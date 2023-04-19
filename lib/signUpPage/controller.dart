@@ -7,7 +7,7 @@ import '../constants.dart';
 import '../main.dart';
 
 import '../navigationPage/navigation_page_view.dart';
-import 'repo/login_repo.dart';
+import 'repo/sign_up_repo.dart';
 import 'state.dart';
 
 class SignUpPageController extends Cubit<SignUpPageState>
@@ -15,7 +15,7 @@ class SignUpPageController extends Cubit<SignUpPageState>
   SignUpPageController() :super(SignUpPageInit());
   static SignUpPageController of(context)=> BlocProvider.of(context);
 
-  LoginRepo loginRepo = LoginRepo();
+  SignUpRepo signUpRepo = SignUpRepo();
 
   TextEditingController fullNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -24,15 +24,13 @@ class SignUpPageController extends Cubit<SignUpPageState>
 
   void signInRequest() async {
     if(formKey.currentState!.validate()){
-      NavigationHelper.pushUntil(navigatorKey.currentContext!, const NavigationPageView(),);
-      // showLoading();
-      // final result = await loginRepo.login(emailController.text, passwordController.text,);
-      // hideLoading();
-      // result.fold(
-      //   (l) => snackBarShower(l.message ?? kErrorText,),
-      //   // (r) => NavigationHelper.pushUntil(navigatorKey.currentContext!, const MainPageView(),),
-      //   (r) => null,
-      // );
+      showLoading();
+      final result = await signUpRepo.signUp(emailController.text, passwordController.text, fullNameController.text,);
+      hideLoading();
+      result.fold(
+        (l) => snackBarShower(l.message ?? kErrorText,),
+        (r) => NavigationHelper.pushUntil(navigatorKey.currentContext!, const NavigationPageView(),),
+      );
     }
   }
   // @override

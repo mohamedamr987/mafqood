@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mafqood/core/core_info.dart';
 import 'package:mafqood/core/helpers/navigation_helper.dart';
 import 'package:mafqood/navigationPage/navigation_page_view.dart';
 import 'package:mafqood/onBoardingPage/on_boarding_page_view.dart';
@@ -27,7 +28,7 @@ class _SplashScreenScaffoldState extends State<SplashScreenScaffold> {
   void delayingFunc() async {
     try {
       Future.delayed(const Duration(seconds: 3)).then(
-        (value) => NavigationHelper.pushUntil(context, const OnBoardingPageView()),
+        (value) => NavigationHelper.pushUntil(context, CoreInfo.isLogged() ? const NavigationPageView() : const OnBoardingPageView()),
       );
     } catch (e, trace) {
       log(e.toString());

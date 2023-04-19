@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mafqood/core/core_info.dart';
 import 'package:mafqood/widgets/general_text.dart';
 
 class InfoComponent extends StatelessWidget {
@@ -7,10 +8,10 @@ class InfoComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
-        GeneralText(text: "Mohamed Amr", size: 20, isBold: true,),
+      children: [
+        GeneralText(text: CoreInfo.auth.currentUser!.displayName!, size: 20, isBold: true,),
         SizedBox(height: 10,),
-        GeneralText(text: "mohamed.a.shaban24@gmail.com"),
+        GeneralText(text: CoreInfo.auth.currentUser!.email!),
       ],
     );
   }

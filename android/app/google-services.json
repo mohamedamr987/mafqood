@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "825215489036",
+    "project_id": "mafqood-1362d",
+    "storage_bucket": "mafqood-1362d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:825215489036:android:6d8c5c7e2788301ec84a29",
+        "android_client_info": {
+          "package_name": "com.mafqood.mafqood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "825215489036-9e0da10qof85ul93784unnq42nd9ciat.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoL0yQQVacyX_RkMpEIJsLfPe-yVZEMoc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "825215489036-9e0da10qof85ul93784unnq42nd9ciat.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

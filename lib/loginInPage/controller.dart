@@ -23,20 +23,16 @@ class LoginInPageController extends Cubit<LoginInPageState>
 
   void signInRequest() async {
     if(formKey.currentState!.validate()){
-      NavigationHelper.pushUntil(navigatorKey.currentContext!, const NavigationPageView(),);
-      // showLoading();
-      // final result = await loginRepo.login(emailController.text, passwordController.text,);
-      // hideLoading();
-      // result.fold(
-      //   (l) => snackBarShower(l.message ?? kErrorText,),
-      //   // (r) => NavigationHelper.pushUntil(navigatorKey.currentContext!, const MainPageView(),),
-      //   (r) => null,
-      // );
+      showLoading();
+      final result = await loginRepo.login(emailController.text, passwordController.text,);
+      hideLoading();
+      result.fold(
+        (l) {
+          print("error: ${l.message}");
+          snackBarShower(l.message ?? kErrorText,);
+        },
+        (r) => NavigationHelper.pushUntil(navigatorKey.currentContext!, const NavigationPageView(),),
+      );
     }
   }
-  // @override
-  // Future<void> close() {
-  //   phoneController.dispose();
-  //   return super.close();
-  // }
 }

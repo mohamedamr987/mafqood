@@ -1,6 +1,8 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:mafqood/firebase_options.dart';
 
 import 'splashScreenPage/splash_screen_scaffold.dart';
 
@@ -14,9 +16,9 @@ void main() async {
       DeviceOrientation.portraitDown,
     ],
   );
-  // await Firebase.initializeApp(
-  //   options: DefaultFirebaseOptions.currentPlatform,
-  // );
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await Hive.initFlutter();
   await Hive.openBox("user");
 
