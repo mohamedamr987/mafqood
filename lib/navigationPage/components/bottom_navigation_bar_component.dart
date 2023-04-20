@@ -34,6 +34,10 @@ class BottomNavigationBarComponent extends StatelessWidget {
               icon: Icons.camera_alt,
             ),
             bottomNavigationBarItemWidget(
+              label: "My reports",
+              icon: Icons.report,
+            ),
+            bottomNavigationBarItemWidget(
               label: "Settings",
               icon: Icons.person,
             ),

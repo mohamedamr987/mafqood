@@ -1,9 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:mafqood/core/core_info.dart';
 import 'package:mafqood/core/helpers/navigation_helper.dart';
-import 'package:mafqood/widgets/show_loading.dart';
-import 'package:mafqood/widgets/snack_bar_shower.dart';
-import '../constants.dart';
+
 import '../main.dart';
 
 import '../navigationPage/navigation_page_view.dart';
@@ -17,7 +16,7 @@ class EditProfilePageController extends Cubit<EditProfilePageState>
 
   LoginRepo loginRepo = LoginRepo();
 
-  TextEditingController emailController = TextEditingController();
+  TextEditingController emailController = TextEditingController(text: CoreInfo.auth.currentUser!.email);
   TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
 
