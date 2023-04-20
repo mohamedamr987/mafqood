@@ -16,7 +16,7 @@ class HomeRepo extends Repository {
         await firestore.collection('reports').get().then((value) => value.docs.forEach((element) {
           reports.add(ReportModel.fromJson(element.data(),element.id));
         }));
-        return reports;
+        return reports.reversed.toList();
       },
     );
   }
