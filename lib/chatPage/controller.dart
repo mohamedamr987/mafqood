@@ -44,7 +44,7 @@ class ChatPageController extends Cubit<ChatPageState> {
             print("Got new message");
             final message = MessageModel.fromJson(event.docChanges.first.doc.data() as Map<String, dynamic>);
             if(!message.isMe){
-              if((chatRepo.messages.isNotEmpty && message.time.isBefore(chatRepo.messages[0].time))) return;
+              if((chatRepo.messages.isNotEmpty && !message.time.isAfter(chatRepo.messages[0].time))) return;
               chatRepo.messages.insert(0,message);
               emit(ChatPageMessageChange());
             }

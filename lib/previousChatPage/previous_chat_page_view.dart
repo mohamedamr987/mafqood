@@ -9,7 +9,7 @@ class PreviousChatPageView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => PreviousChatPageController(),
+      create: (context) => PreviousChatPageController()..getPreviousChatList(),
       child: const PreviousChatPageScaffold(),
     );
   }
