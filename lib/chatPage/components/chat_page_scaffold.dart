@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mafqood/chatPage/components/chat_top_bar_component.dart';
+import 'package:mafqood/chatPage/components/chat_app_bar_component.dart';
 import 'package:mafqood/chatPage/components/message_text_field_component.dart';
 import 'package:mafqood/chatPage/components/messages_component.dart';
 import 'package:mafqood/chatPage/controller.dart';
@@ -22,6 +22,7 @@ class ChatPageScaffold extends StatelessWidget {
         widthMargin: 0,
         heightMargin: 0,
         minHeight: 0.0,
+        appBar: chatAppBarComponent(context),
         maxHeight: SizeConfig.screenHeight,
         widget: BlocBuilder(
           bloc: blocController,
@@ -31,7 +32,6 @@ class ChatPageScaffold extends StatelessWidget {
                 child: Column(
                   children: const [
                     SizedBox(width: double.infinity,),
-                    ChatTopBarComponent(),
                     MessagesComponent(),
                     ChatTextFieldComponent(),
                   ],
