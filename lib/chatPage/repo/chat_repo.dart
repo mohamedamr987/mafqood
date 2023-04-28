@@ -9,6 +9,7 @@ import 'package:mafqood/core/repo/repo.dart';
 class ChatRepo extends Repository {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   String otherUserName = "";
+  String otherFcmToken = "";
   DocumentReference? chatRef;
   CollectionReference? chatMessagesRef;
   List<MessageModel> messages = [];

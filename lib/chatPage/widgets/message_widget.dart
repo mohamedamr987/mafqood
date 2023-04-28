@@ -4,6 +4,8 @@ import 'package:mafqood/chatPage/widgets/message_time_widget.dart';
 import 'package:mafqood/constants.dart';
 import 'package:mafqood/widgets/general_text.dart';
 
+import '../../size_config.dart';
+
 class MessageWidget extends StatelessWidget {
   final MessageModel messageModel;
   const MessageWidget({Key? key, required this.messageModel,}) : super(key: key);
@@ -16,6 +18,9 @@ class MessageWidget extends StatelessWidget {
         Container(
           margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+          constraints: BoxConstraints(
+            maxWidth: SizeConfig.screenWidth *0.9,
+          ),
           decoration: BoxDecoration(
             color: messageModel.isMe? Colors.grey[200] : kPrimaryColor,
             borderRadius: BorderRadius.only(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mafqood/constants.dart';
+import '../core/helpers/text_align_helper.dart';
 import '../size_config.dart';
 
 class GeneralText extends StatelessWidget {
@@ -41,6 +42,7 @@ class GeneralText extends StatelessWidget {
         ),
         textScaleFactor: 1.0,
         textAlign: textAlign,
+        textDirection:(TextAlignHelper.isRtl(text) ? TextDirection.rtl : TextDirection.ltr),
         overflow: overflow,
       ),
     );

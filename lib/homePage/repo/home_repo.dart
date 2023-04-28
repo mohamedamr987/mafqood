@@ -33,5 +33,4 @@ class HomeRepo extends Repository {
     );
   }
 
-
 }

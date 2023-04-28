@@ -9,8 +9,7 @@ import '../helpers/dio_helper.dart';
 
 
 abstract class Repository{
-  
-  final DioHelper dioHelper = DioHelper();
+
 
   Future<Either<Failure,ReturnType>> exceptionHandler<ReturnType> (Future<ReturnType> Function() function) async{
     try{

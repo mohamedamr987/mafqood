@@ -5,12 +5,13 @@ import 'package:mafqood/core/errors/failures.dart';
 import 'package:mafqood/core/repo/repo.dart';
 
 class LoginRepo extends Repository {
-
+  FirebaseAuth? firebaseAuth;
+  LoginRepo({this.firebaseAuth});
   Future<Either<Failure, void>> login(String email, String password,) async {
     return await exceptionHandler(
       () async {
         try {
-          final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+          final credential = await (firebaseAuth??FirebaseAuth.instance).signInWithEmailAndPassword(
               email: email,
               password: password
           );
